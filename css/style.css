@@ -1,0 +1,462 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* welcome section */
+.welcome{
+  height: 100%;
+  width: 100vw;
+  transition: 0.4s;
+  position: fixed;
+  background-color: white;
+  inset: 0;
+  z-index: 100;
+}
+
+.welcome .logo{
+  color: #FF7466;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.welcome img{
+  height: 45vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: flex;
+}
+
+.welcome h3{
+  color: #050A21;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.welcome p{
+  color: #858383;
+  text-align: center;
+  margin-top: 1em;
+  line-height: 1.7em;
+}
+
+.welcome button{
+  background-color: #FF7466;
+  border: none;
+  color: white;
+  margin: 4em auto 0;
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-radius: 60px;
+}
+/* End of welcome section */
+
+/* empty list section */
+.empty__list{
+  height: 100%;
+  width: 100vw;
+  transition: 0.4s;
+  position: fixed;
+  background-color: white;
+  inset: 0;
+  z-index: 90;
+}
+
+.empty__list .logo{
+  color: #FF7466;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.empty__list img{
+  height: 45vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: flex;
+}
+
+.empty__list h3{
+  color: #050A21;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.empty__list p{
+  color: #858383;
+  text-align: center;
+  margin-top: 1em;
+  line-height: 1.7em;
+}
+
+.empty__list button{
+  background-color: #FF7466;
+  border: none;
+  color: white;
+  margin: 4em auto 0;
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-radius: 60px;
+}
+/* End of welcome section */
+
+
+/* All list section */
+.all__list{
+  height: 100%;
+  width: 100vw;
+  transition: 0.4s;
+  position: fixed;
+  background-color: white;
+  inset: 0;
+  z-index: 90;
+}
+
+.all__list .all__list__container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.all__list header{
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px dotted #FF7466;
+  position: relative;
+}
+
+.all__list header h3{
+  color: #FF7466;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.all__list header svg{
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
+
+.all__list header .total__price{
+  position: absolute;
+  inset: 0;
+  background-color: #fff;
+  width: 100vw;
+  height: 30px;
+  top: 100%;
+  margin-top: 2px;
+  display: grid;
+  place-content: center;
+}
+
+.all__list header .delete__all{
+  position: absolute;
+  inset: 0;
+  background-color: #fff;
+  width: 100vw;
+  height: 30px;
+  top: 100%;
+  margin-top: 2px;
+  border: none;
+}
+
+.all__list .your__list__items{
+  flex: 1;
+  padding-top: 40px;
+  overflow-y: auto;
+}
+
+.all__list .your__list__items .single__item{
+  width: 90%;
+  background-color: #FF7466;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgb(194, 192, 192);
+  padding: 15px 10px;
+  margin-bottom: 1em;
+}
+
+.all__list .your__list__items .single__item:active{
+  transform: scale(0.9);
+}
+
+.all__list .your__list__items .single__item svg{
+  margin: 0 10px;
+  fill: white;
+}
+
+.all__list .your__list__items .single__item #checkbox{
+  position: absolute;
+  visibility: hidden;
+  position: none;
+}
+
+.all__list .your__list__items .purchased__single{
+  width: 85%;
+  background-color: #c2281a;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.all__list .your__list__items .single__item .single__item__container{
+  display: flex;
+  align-items: center;
+}
+
+.all__list .single__item .image__container{
+  flex: 0.35;
+  display: grid;
+  place-content: center;
+}
+
+.all__list .single__item .info{
+  flex: 1;
+  pointer-events: none;
+}
+
+.all__list .single__item .info p{
+  font-size: 0.8em;
+}
+
+.all__list .single__item .info h4{
+  text-transform: capitalize;
+}
+
+.all__list .single__item .quantity{
+  display: flex;
+  pointer-events: none;
+}
+
+.all__list .single__item .quantity h5{
+  font-size: 1em;
+}
+
+.all__list .single__item .quantity p{
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.all__list .single__item .mini__container{
+  min-width: fit-content;
+  padding: 0 10px;
+}
+
+.all__list .bottom__nav{
+  height: 60px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  box-shadow: 0px -4px 16px rgb(226, 226, 226);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.all__list .bottom__nav span{
+  background-color: #FF7466;
+  height: 60px;
+  width: 60px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  position: relative;
+  top: -30px;
+  transition: 0.4s;
+  z-index: 2;
+}
+.all__list .bottom__nav span:active{
+  background-color: rgb(255, 111, 0);
+  border: 12px solid rgb(255, 111, 0);
+}
+
+.all__list .bottom__nav span svg{
+  fill: white;
+  height: 15px;
+}
+
+.all__list .form__container{
+  position: absolute;
+  bottom: 0;
+  height: 350px;
+  width: 100%;
+  border-top: 2px dashed #FF7466;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: rgb(247, 246, 246);
+  transition: 0.4s;
+  z-index: 3;
+}
+
+.all__list .form__container form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2em;
+}
+
+.all__list .form__container form label{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: rgb(36, 35, 35);
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.all__list .form__container form label input{
+  padding: 1em;
+  margin-top: 5px;
+}
+
+.all__list .form__container form label input:focus{
+  border: 1px solid #FF7466;
+  outline: none;
+}
+
+.all__list .form__container form .btn{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+} 
+
+.all__list .form__container form .btn button{
+  width: 48%;
+  padding: 1em;
+  border: 1px dotted #FF7466;
+  color: #FF7466;
+}
+
+.all__list .form__container form .btn button:nth-child(1){
+  background-color: #FF7466;
+  border: none;
+  color: white;
+}
+/* End of All list section */
+
+/*    modals       */
+.confirm__edit__modal{
+  background-color: white;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0px 0px 16px lightgray;
+  border-radius: 8px;
+  width: 210px;
+  margin: 0 auto;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.confirm__edit__modal .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.confirm__edit__modal .container p{
+  text-align: center;
+  position: relative;
+  top: 30%;
+}
+
+.confirm__edit__modal .container .btn{
+  display: flex;
+  justify-self: flex-end;
+  border-top: 1px solid #000;
+}
+
+.confirm__edit__modal .container .btn button{
+  flex: 1;
+  height: 40px;
+  border: none;
+  background-color: white;
+}
+
+.confirm__edit__modal .container .btn button:nth-child(1){
+  border-right: 1px solid black;
+  color: rgb(24, 24, 192);
+}
+
+/*  END of modals */
+
+/*    User Guide    */
+.tour{
+  height: calc(100vh - 118px);
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  z-index: 1;
+  transition: 0.4s;
+}
+
+.tour .tour__container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.tour .tour__container .header h2{
+  text-align: center;
+  height: 50px;
+  border-bottom: 2px dotted #FF7466;
+  font-size: 1.2em;
+  display: grid;
+  place-content: center;
+  width: 100%;
+  background-color: #fff;
+}
+
+.tour .tour__container .tips__container{
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 1em;
+}
+
+.tour .tour__container .tips__container .single__tip{
+  width: 85%;
+  margin: 0 auto 1em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 16px lightgray;
+}
+
+.tour .tour__container .tips__container .single__tip h4{
+  padding: 1em;
+}
+
+.tour .tour__container .tips__container .single__tip img{
+  width: 100%;
+  object-fit: contain;
+  margin: 0.7em 0;
+}
+
+.tour .tour__container .tips__container .single__tip ol{
+  list-style-position: inside;
+  padding-bottom: 1em;
+}
+
+.tour .tour__container .tips__container .single__tip ol li{
+  padding: 0.5em 1em;
+}
+/*    End of user guide */
