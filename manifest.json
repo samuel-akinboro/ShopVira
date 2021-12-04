@@ -1,0 +1,28 @@
+{
+  "name": "ShopVira",
+  "short_name": "ShopVira",
+  "icons": [
+    {
+      "src": "./assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/shopping-app/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
