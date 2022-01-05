@@ -7,16 +7,16 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/animate.min.css">
-  <!-- <link rel="manifest" href="./manifest.json"> -->
+  <link rel="manifest" href="./manifest.json">
   <script src="./scripts/dexie.min.js"></script>
   <script>
     // Check that service workers are supported
-    // if ('serviceWorker' in navigator) {
-    //   // Use the window load event to keep the page load performant
-    //   window.addEventListener('load', () => {
-    //     navigator.serviceWorker.register('./sw.js');
-    //   });
-    // }
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
     </script>
 </head>
 <body>
