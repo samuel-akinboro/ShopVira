@@ -7,16 +7,16 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/animate.min.css">
-  <link rel="manifest" href="./manifest.json">
+  <!-- <link rel="manifest" href="./manifest.json"> -->
   <script src="./scripts/dexie.min.js"></script>
   <script>
     // Check that service workers are supported
-    if ('serviceWorker' in navigator) {
-      // Use the window load event to keep the page load performant
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js');
-      });
-    }
+    // if ('serviceWorker' in navigator) {
+    //   // Use the window load event to keep the page load performant
+    //   window.addEventListener('load', () => {
+    //     navigator.serviceWorker.register('./sw.js');
+    //   });
+    // }
     </script>
 </head>
 <body>
@@ -50,7 +50,7 @@
       <div class="all__list__container">
         <header>
           <h3>Your list</h3>
-          <svg id="menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 18c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z"/></svg>
+          <svg id="menu" class="btn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 18c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z"/></svg>
           <div class="total__price">Total: ₦ 2000</div>
           <button class="delete__all">Clear all</button>
         </header>
@@ -80,15 +80,41 @@
               </div>
             </label>
           </div> -->
+          <!-- <div class="single__item testing">
+            <label for="checkbox">
+              <div class="single__item__container">
+                <div class="image__container">
+                  <div class="image">B</div>
+                </div>
+                <div class="info">
+                  <h4>Book</h4>
+                  <p>pending</p>
+                </div>
+                <div class="quantity">
+                  <div class="mini__container">
+                    <h5>Price</;>
+                    <p><span>₦</span>30</p>
+                  </div>
+                  <div class="mini__container">
+                    <h5>Quantity</h5>
+                    <p>$2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="delete__btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 3.752l-4.423-3.752-7.771 9.039-7.647-9.008-4.159 4.278c2.285 2.885 5.284 5.903 8.362 8.708l-8.165 9.447 1.343 1.487c1.978-1.335 5.981-4.373 10.205-7.958 4.304 3.67 8.306 6.663 10.229 8.006l1.449-1.278-8.254-9.724c3.287-2.973 6.584-6.354 8.831-9.245z"/></svg>
+              </div>
+            </label>
+          </div> -->
         </div>
 
   <!-- bottom navigation -->
         <div class="bottom__nav">
-          <svg id="home__button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12.148l-1.361 1.465-10.639-9.883-10.639 9.868-1.361-1.465 12-11.133 12 11.148zm-4 1.749l-2 10.103h-12l-2-10.103 8-7.444 8 7.444zm-7 6.103c0-.552-.448-1-1-1s-1 .448-1 1 .448 1 1 1 1-.448 1-1zm1-5c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/></svg>
-          <span id="bottom__nav__plus">
+          <svg id="home__button" class="btn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12.148l-1.361 1.465-10.639-9.883-10.639 9.868-1.361-1.465 12-11.133 12 11.148zm-4 1.749l-2 10.103h-12l-2-10.103 8-7.444 8 7.444zm-7 6.103c0-.552-.448-1-1-1s-1 .448-1 1 .448 1 1 1 1-.448 1-1zm1-5c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/></svg>
+          <span id="bottom__nav__plus" class="btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
           </span>
-          <svg id="user__guide__button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z"/></svg>
+          <svg id="user__guide__button" class="btn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z"/></svg>
         </div>
   <!-- End of Bottom navigation -->
 
@@ -106,7 +132,7 @@
             </label>
             <label for="">
               Quantity:
-              <input type="number" value=1 id="item__quantity">
+              <input type="number"placeholder="1" id="item__quantity">
             </label>
             <div class="btn">
               <button type="submit" id="add__item__button">add</button>
@@ -129,7 +155,7 @@
           </label>
           <label for="">
             Quantity:
-            <input type="number" value=1 id="edit__item__quantity">
+            <input type="number" placeholder="1" id="edit__item__quantity">
           </label>
           <div class="btn">
             <button type="submit" id="edit__item__button">update</button>
@@ -162,7 +188,10 @@
                 <img src="./assets/images/tip-2.png" alt="">
                 <ol>
                   <li>Total Price</li>
-                  <li>Short tap to toggle item to purchased. Tap and hold to edit item</li>
+                  <li>
+                    Short tap to toggle item to purchased. 
+                    Tap and hold to edit item (Right click to edit item on desktop)
+                  </li>
                   <li>Delete item</li>
                 </ol>
               </div>
@@ -185,10 +214,19 @@
     <!-- modal -->
         <div class="confirm__edit__modal">
           <div class="container">
-            <p>Edit item ?</p>
+            <p class="">Edit item ?</p>
             <div class="btn">
               <button class="confirm__edit">Ok</button>
               <button class="close__edit__modal">cancel</button>
+            </div>
+          </div>
+        </div>
+        <div class="confirm__edit__modal delete__all__modal">
+          <div class="container">
+            <p class="delete__modal__message">Clear all items ?</p>
+            <div class="btn">
+              <button class="confirm__edit confirm__delete__all">Ok</button>
+              <button class="close__edit__modal close__delete__all__modal">cancel</button>
             </div>
           </div>
         </div>

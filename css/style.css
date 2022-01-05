@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+ button, .btn{
+   cursor: pointer;
+ }
+
 /* welcome section */
 .welcome{
   height: 100%;
@@ -163,44 +167,63 @@
 .all__list header .delete__all{
   position: absolute;
   inset: 0;
-  background-color: #fff;
+  background-color: rgb(226, 5, 5);
   width: 100vw;
-  height: 30px;
+  height: 40px;
   top: 100%;
-  margin-top: 2px;
+  margin-top: 1px;
   border: none;
+  color: #fff;
+  padding: 1em;
 }
 
 .all__list .your__list__items{
   flex: 1;
-  padding-top: 40px;
+  padding-top: 50px;
   overflow-y: auto;
 }
 
 .all__list .your__list__items .single__item{
   width: 90%;
-  background-color: #FF7466;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0px 4px 16px rgb(194, 192, 192);
-  padding: 15px 10px;
+  padding: 0 10px;
   margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.all__list .your__list__items .single__item #checkbox{
+  margin-right: 10px;
+  outline: none;
+}
+
+.all__list .your__list__items .single__item > label{
+  flex: 1;
+  cursor: pointer;
 }
 
 .all__list .your__list__items .single__item:active{
-  transform: scale(0.9);
+  transform: scale(0.97);
+}
+
+.all__list .your__list__items .single__item label{
+  display: flex;
+  align-items: center;
+}
+
+.all__list .your__list__items .single__item .delete__btn{
+  cursor: pointer;
 }
 
 .all__list .your__list__items .single__item svg{
   margin: 0 10px;
-  fill: white;
-}
-
-.all__list .your__list__items .single__item #checkbox{
-  position: absolute;
-  visibility: hidden;
-  position: none;
+  fill: black;
+  pointer-events: none !important;
 }
 
 .all__list .your__list__items .purchased__single{
@@ -208,17 +231,37 @@
   background-color: #c2281a;
   margin-left: auto;
   margin-right: 20px;
+  color: #fff;
+}
+
+.all__list .your__list__items .purchased__single svg{
+  fill: white;
 }
 
 .all__list .your__list__items .single__item .single__item__container{
   display: flex;
   align-items: center;
+  flex: 1;
+  padding: 15px 0;
 }
 
 .all__list .single__item .image__container{
   flex: 0.35;
   display: grid;
   place-content: center;
+  max-width: 4em;
+  margin-right: 1em;
+}
+
+.all__list .single__item .image__container .image{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px dashed black;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .all__list .single__item .info{
@@ -350,27 +393,28 @@
 
 /*    modals       */
 .confirm__edit__modal{
-  background-color: white;
   position: absolute;
   inset: 0;
-  box-shadow: 0px 0px 16px lightgray;
-  border-radius: 8px;
-  width: 210px;
-  margin: 0 auto;
-  height: 150px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
+  display: none;
+  place-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(26, 25, 25, 0.529);
 }
 
 .confirm__edit__modal .container{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  /* background-color: red; */
+  background-color: white;
+  overflow: hidden;
+  width: 210px;
+  margin: auto;
+  height: 150px;
+  /* box-shadow: 0px 0px 16px lightgray; */
+  border-radius: 8px;
+  justify-self: center !important;
+  z-index: 10;
 }
 
 .confirm__edit__modal .container p{
@@ -437,12 +481,14 @@
   width: 85%;
   margin: 0 auto 1em;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 0px 16px lightgray;
+  border-radius: 0px;
+  box-shadow: 2px 4px 8px rgb(194, 194, 194);
 }
 
 .tour .tour__container .tips__container .single__tip h4{
   padding: 1em;
+  border-bottom: 3px dashed #FF7466;
+  color: cornflowerblue;
 }
 
 .tour .tour__container .tips__container .single__tip img{
@@ -454,9 +500,21 @@
 .tour .tour__container .tips__container .single__tip ol{
   list-style-position: inside;
   padding-bottom: 1em;
+  border-top: 2px dashed #FF7466;
 }
 
 .tour .tour__container .tips__container .single__tip ol li{
   padding: 0.5em 1em;
 }
 /*    End of user guide */
+
+.all__list .your__list__items .testing{
+  background-color: #fff;
+  color: black;
+}
+
+@media (min-width: 1024px) {
+  .tour .tour__container .tips__container .single__tip{
+    width: 400px;
+  }
+}
