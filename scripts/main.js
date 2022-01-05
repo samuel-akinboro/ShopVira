@@ -39,8 +39,10 @@ const leaveWelcomePage = (e) => {
   welcomePageContainer.style.transform = "translateX(-90%)";
   welcomePageContainer.addEventListener("transitionend", ()=>{welcomePageContainer.style.display="none"})
   if(allItems.length == 0) {
+    emptyListPageContainer.style.transform = "translateX(0)";
     emptyListPageContainer.style.display = "block"
   }else{
+    allListContainer.style.transform = "translateX(0)";
     allListContainer.style.display = "block"
   }
 }
@@ -56,7 +58,7 @@ const hideAddItemForm = (e) => {
 }
 
 const goHome = () => {
-  userGuideContainer.style.display = "none"
+  location.reload();
 }
 
 const userGuidePage = () =>{
@@ -79,6 +81,12 @@ const fetchItems = async () => {
     userGuideContainer.style.display = "none";
     emptyListPageContainer.style.display = "none"
   }else if(allItems.length == 0){
+    allListContainer.style.display = "none";
+    addItemFormContainer.style.display = "none";
+    editItemFormContainer.style.display = "none";
+    confirmEditModal.style.display = "none";
+    deleteAllItemButton.style.display = "none";
+    emptyListPageContainer.style.transform = "translateX(0)"
     emptyListPageContainer.style.display = "block"
   }
   // get total price
@@ -107,7 +115,7 @@ const fetchItems = async () => {
           </div>
           <div class="quantity">
             <div class="mini__container">
-              <h5>Price</;>
+              <h5>Price</h5>
               <p><span>₦</span>${item.price}</p>
             </div>
             <div class="mini__container">
@@ -179,9 +187,11 @@ const editItem = (event, id, name, quantity, price, isPurchased) =>{
       holdTimerValue = 0;
       confirmEditModal.style.display = "grid";
       closeConfirmEditModalButton.addEventListener('click', ()=> {
+        clearInterval(ID)
         confirmEditModal.style.display = "none"
       })
       confirmEditModalButton.addEventListener('click', ()=> {
+        clearInterval(ID)
         confirmEditModal.style.display = "none"
         addItemFormContainer.style.display = "none";
         editItemFormContainer.style.display = "block";
@@ -207,6 +217,8 @@ const editItem = (event, id, name, quantity, price, isPurchased) =>{
 
 const editItemOnRightClick = async (e, id, name, quantity, price, isPurchased) => {
   e.preventDefault();
+  confirmEditModal.style.display = "none"
+  addItemFormContainer.style.display = "none";
   await db.items.update(id, {isPurchased: isPurchased})
   await fetchItems();
   confirmEditModal.style.display = "grid";
@@ -214,9 +226,8 @@ const editItemOnRightClick = async (e, id, name, quantity, price, isPurchased) =
     confirmEditModal.style.display = "none"
   })
   confirmEditModalButton.addEventListener('click', ()=> {
-    confirmEditModal.style.display = "none"
-    addItemFormContainer.style.display = "none";
     editItemFormContainer.style.display = "block";
+    confirmEditModal.style.display = "none"
     document.querySelector('#edit__item__name').value = name;
     document.querySelector('#edit__item__price').value = price;
     document.querySelector('#edit__item__quantity').value = quantity;
@@ -249,7 +260,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
   editItemFormContainer.style.display = "none";
   confirmEditModal.style.display = "none";
   deleteAllItemButton.style.display = "none";
-  fetchItems()
+  fetchItems();
 })
 
 // Event Listeners

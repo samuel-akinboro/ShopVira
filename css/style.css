@@ -23,7 +23,7 @@
 .welcome .logo{
   color: #FF7466;
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .welcome img{
@@ -50,7 +50,7 @@
   background-color: #FF7466;
   border: none;
   color: white;
-  margin: 4em auto 0;
+  margin: 1.5em auto 0;
   display: flex;
   width: 80%;
   justify-content: center;
@@ -74,7 +74,7 @@
 .empty__list .logo{
   color: #FF7466;
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .empty__list img{
@@ -101,7 +101,7 @@
   background-color: #FF7466;
   border: none;
   color: white;
-  margin: 4em auto 0;
+  margin: 1.5em auto 0;
   display: flex;
   width: 80%;
   justify-content: center;
@@ -222,7 +222,7 @@
 
 .all__list .your__list__items .single__item svg{
   margin: 0 10px;
-  fill: black;
+  fill: #C2281A;
   pointer-events: none !important;
 }
 
@@ -236,13 +236,18 @@
 
 .all__list .your__list__items .purchased__single svg{
   fill: white;
+  height: 100% !important;
+  padding: 18px 0;
+}
+
+.all__list .your__list__items .purchased__single .delete__btn{
+  background-color: #C2281A;
 }
 
 .all__list .your__list__items .single__item .single__item__container{
   display: flex;
   align-items: center;
   flex: 1;
-  padding: 15px 0;
 }
 
 .all__list .single__item .image__container{
@@ -257,7 +262,7 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 2px dashed black;
+  border: 2px dashed rgb(227, 227, 106);
   font-size: 2em;
   display: flex;
   align-items: center;
@@ -267,19 +272,27 @@
 .all__list .single__item .info{
   flex: 1;
   pointer-events: none;
+  min-width: fit-content;
 }
 
 .all__list .single__item .info p{
   font-size: 0.8em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .all__list .single__item .info h4{
   text-transform: capitalize;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .all__list .single__item .quantity{
   display: flex;
   pointer-events: none;
+  height: 100%;
 }
 
 .all__list .single__item .quantity h5{
@@ -293,8 +306,34 @@
 
 .all__list .single__item .mini__container{
   min-width: fit-content;
-  padding: 0 10px;
+  padding: 15px 10px;
+  background-color: #F3B3A6;
+  height: 100%;
+  width: 84px;
+  color: #fff;
+  border-left: 1px solid #fff;
+  text-align: center;
 }
+
+.all__list .single__item .mini__container:nth-child(2){
+  background-color: #E4959E;
+}
+
+.all__list .your__list__items .purchased__single .mini__container{
+  background-color: #ECE4B7;
+  color: #000;
+  /* border-color: #000; */
+}
+
+.all__list .your__list__items .purchased__single .mini__container:nth-child(2){
+  /* background-color: #E6AA68; */
+  background-color: #820263;
+  color: #fff;
+}
+
+/* .all__list .single__item .mini__container h5{
+  color: #37515F;
+} */
 
 .all__list .bottom__nav{
   height: 60px;
@@ -513,7 +552,41 @@
   color: black;
 }
 
+@media(min-height: 570px){
+  .welcome .logo{
+    margin-top: 2em;
+  }
+  
+  .welcome button{
+    margin: 4em auto 0;
+  }
+  
+  .empty__list .logo{
+    margin-top: 2em;
+  }
+  
+  .empty__list button{
+    margin: 4em auto 0;
+  }
+}
+
 @media (min-width: 1024px) {
+  .welcome .logo{
+    margin-top: 2em;
+  }
+  
+  .welcome button{
+    margin: 4em auto 0;
+  }
+  
+  .empty__list .logo{
+    margin-top: 2em;
+  }
+  
+  .empty__list button{
+    margin: 4em auto 0;
+  }
+
   .tour .tour__container .tips__container .single__tip{
     width: 400px;
   }
