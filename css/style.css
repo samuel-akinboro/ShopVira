@@ -289,9 +289,9 @@
   overflow: hidden;
 }
 
-.all__list .your__list__items .purchased__single{
+/* .all__list .your__list__items .purchased__single{
   text-decoration: line-through;
-}
+} */
 
 .all__list .single__item .quantity{
   display: flex;

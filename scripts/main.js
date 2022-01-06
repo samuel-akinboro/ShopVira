@@ -145,7 +145,7 @@ const addItem = async (e) => {
   e.preventDefault();
   let name = document.querySelector("#item__name").value;
   let price = document.querySelector("#item__price").value;
-  let quantity = document.querySelector("#item__quantity").value;
+  let quantity = document.querySelector("#item__quantity").value || 1;
   let isPurchased = false;
 
   await db.items.add({name, quantity, price, isPurchased});
