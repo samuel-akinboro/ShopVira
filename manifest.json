@@ -22,7 +22,7 @@
   ],
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
-  "start_url": "/shopping-app/",
+  "start_url": "/ShopVira/index.html",
   "display": "standalone",
   "orientation": "portrait"
 }

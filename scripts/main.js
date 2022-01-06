@@ -29,6 +29,7 @@ let confirmDeleteModal = document.querySelector('.delete__all__modal');
 let confirmDeleteModalMessage = document.querySelector('.delete__modal__message');
 let closeConfirmDeleteModalButton = document.querySelector(".close__delete__all__modal");
 let confirmDeleteModalButton = document.querySelector(".confirm__delete__all");
+let backToListButton = document.querySelector("#back__button");
 
 // simple state management
 let allItems;
@@ -62,7 +63,16 @@ const goHome = () => {
 }
 
 const userGuidePage = () =>{
-  userGuideContainer.style.display = "block"
+  userGuideButton.style.display = "none";
+  userGuideContainer.style.display = "block";
+  backToListButton.style.display = "block";
+}
+
+const allListPage = () => {
+  userGuideContainer.style.display = "none"
+  allListContainer.style.display = "block"
+  userGuideButton.style.display = "block";
+  backToListButton.style.display = "none"
 }
 
 // function logic
@@ -91,19 +101,16 @@ const fetchItems = async () => {
   }
   // get total price
   document.querySelector(".total__price").innerHTML = `Total: ₦ ${allItems.reduce((total, item) => total + (item.price * item.quantity), 0)}`;
-   
+
   allItemContainer.innerHTML = allItems.map((item, i) =>`
-    <div 
-      class="single__item ${item.isPurchased && 'purchased__single'}" 
+    <div
+      class="single__item ${item.isPurchased && 'purchased__single'}"
       onContextMenu="editItemOnRightClick(event, ${item.id}, '${item.name}', '${item.quantity}', '${item.price}', '${item.isPurchased}')"
     >
       <label>
-        <input type="checkbox" 
-          id="checkbox" ${item.isPurchased && 'checked'}
-        >
         <div class="single__item__container"
           onmousedown="toggleItemStatus(event, ${item.id}, ${item.isPurchased})"
-          ontouchstart="editItem(event, ${item.id}, '${item.name}', '${item.quantity}', '${item.price}', '${item.isPurchased}')" 
+          ontouchstart="editItem(event, ${item.id}, '${item.name}', '${item.quantity}', '${item.price}', '${item.isPurchased}')"
           ontouchend="resetEditItem()"
         >
           <div class="image__container">
@@ -156,7 +163,7 @@ const removeItem = async (id) => {
       })
       confirmDeleteModalButton.addEventListener('click', async ()=> {
         await db.items.delete(id);
-        await fetchItems();      
+        await fetchItems();
         confirmDeleteModal.style.display = "none"
       })
 }
@@ -270,6 +277,7 @@ addItemForm.addEventListener('submit', addItem);
 closeAddItemButton.addEventListener('click', hideAddItemForm);
 closeEditItemButton.addEventListener('click', (e)=> {e.preventDefault(); editItemFormContainer.style.display = "none"});
 homeButton.addEventListener('click', goHome);
+backToListButton.addEventListener('click', allListPage)
 userGuideButton.addEventListener('click', userGuidePage)
 bottomNavPlusButton.addEventListener('click', ()=> {userGuideContainer.style.display = "none"; addItemFormContainer.style.display = "block"});
 deleteAllItemButton.addEventListener('click', deleteAllItems)
