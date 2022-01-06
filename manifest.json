@@ -22,7 +22,7 @@
   ],
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
-  "start_url": "/ShopVira/index.html",
+  "start_url": "https://victor-akinboro.github.io/ShopVira/index.html",
   "display": "standalone",
   "orientation": "portrait"
 }
